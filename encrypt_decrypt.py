@@ -1,5 +1,7 @@
 def encrypt(text: str) -> str:
-    raise NotImplementedError("TODO in AA-6")
+    even = text[0::2]
+    odd = text[1::2]
+    return even + odd
 
 def decrypt(cipher: str) -> str:
     raise NotImplementedError("TODO in AA-7 / AA-24")
