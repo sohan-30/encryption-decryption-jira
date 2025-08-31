@@ -4,7 +4,6 @@ def encrypt(text: str) -> str:
     return even + odd
 
 def decrypt(cipher: str) -> str:
-    # Correct split: even-part is longer when string length is odd
     half = (len(cipher) + 1) // 2
     even = cipher[:half]
     odd = cipher[half:]
@@ -17,4 +16,13 @@ def decrypt(cipher: str) -> str:
     return ''.join(out)
 
 if __name__ == "__main__":
-    print("CLI will be added in AA-8")
+    print("1) Encrypt\n2) Decrypt")
+    choice = input("Enter choice (1/2): ").strip()
+    if choice == "1":
+        text = input("Enter message: ")
+        print("Encrypted:", encrypt(text))
+    elif choice == "2":
+        text = input("Enter encrypted message: ")
+        print("Decrypted:", decrypt(text))
+    else:
+        print("Invalid choice.")
