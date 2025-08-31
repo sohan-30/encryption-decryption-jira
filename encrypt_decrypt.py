@@ -4,8 +4,8 @@ def encrypt(text: str) -> str:
     return even + odd
 
 def decrypt(cipher: str) -> str:
-    # BUGGY: fails for odd-length strings
-    half = len(cipher) // 2
+    # Correct split: even-part is longer when string length is odd
+    half = (len(cipher) + 1) // 2
     even = cipher[:half]
     odd = cipher[half:]
     out = []
@@ -18,4 +18,3 @@ def decrypt(cipher: str) -> str:
 
 if __name__ == "__main__":
     print("CLI will be added in AA-8")
-    print(encrypt("message")) 
